@@ -1,4 +1,5 @@
 ﻿using System;
+using Digman.IO.CFlat.Tests;
 
 namespace Digman.IO.CFlat
 {
@@ -6,7 +7,7 @@ namespace Digman.IO.CFlat
     {
         public static void Main(string[] args)
         {
-            
+            KeywordTest.TestKeywordContents();
         }
     }
 }

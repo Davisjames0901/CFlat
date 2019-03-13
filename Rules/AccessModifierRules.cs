@@ -3,6 +3,7 @@ using Digman.IO.CFlat.Data;
 
 namespace Digman.IO.CFlat.Rules
 {
+  //todo: stop being indecisive. Lets change these <Token, Func<>>
   public static class AccessModifierRules
   {
     // This defines our rules for having access modifers on scope creating tokens
@@ -21,7 +22,9 @@ namespace Digman.IO.CFlat.Rules
     // This defines our rules for having access modifiers on members
     public static readonly Dictionary<MemberType, AccessModifier[]> MemberRuleTree = new Dictionary<MemberType, AccessModifier[]>
     {
-      
+      {MemberType.InterfaceMember, new [] {AccessModifier.NotValid}},
+      {MemberType.Method, new [] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
+      {MemberType.MethodVariable, new [] {AccessModifier.NotValid}}
     };
   }
 }

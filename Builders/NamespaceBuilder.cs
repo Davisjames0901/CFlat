@@ -8,8 +8,8 @@ namespace Digman.IO.CFlat.Builders
     {
       var parsedNamespace = new Namespace();
 
-      
 
+      return parsedNamespace;
     }
   }
 }

@@ -1,9 +1,13 @@
 namespace Digman.IO.CFlat.Data
 {
+  //This is a list of valid member types or member status
   public enum MemberType
   {
-    Variable,
+    ClassVariable,
+    MethodVariable,
     Method,
-    InterfaceMember
+    InterfaceMember,
+
+    NotValid
   }
 }
