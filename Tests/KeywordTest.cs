@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Digman.IO.CFlat.Data;
 using System.Linq;
+using Digman.IO.CFlat.Data.Enums;
 using Digman.IO.CFlat.Helpers;
 
 namespace Digman.IO.CFlat.Tests
@@ -48,6 +49,11 @@ namespace Digman.IO.CFlat.Tests
             issueFound = true;
           }
         }
+      }
+
+      if (!issueFound)
+      {
+        ConsoleHelpers.PrintSuccess("Passed keyword validation");
       }
       
       return !issueFound;

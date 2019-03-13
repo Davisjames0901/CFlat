@@ -1,30 +1,29 @@
 using System.Collections.Generic;
-using Digman.IO.CFlat.Data;
+using Digman.IO.CFlat.Data.Enums;
+using System.Linq;
 
 namespace Digman.IO.CFlat.Rules
 {
-  //todo: stop being indecisive. Lets change these <Token, Func<>>
-  public static class AccessModifierRules
-  {
-    // This defines our rules for having access modifers on scope creating tokens
-    public static readonly Dictionary<ScopeType, AccessModifier[]> ScopeRuleTree = new Dictionary<ScopeType, AccessModifier[]>
+    public static class AccessModifierRules
     {
-      { ScopeType.Namespace, new [] { AccessModifier.NotValid } },
-      { ScopeType.Class, new [] { AccessModifier.Private, AccessModifier.Public, AccessModifier.None }},
-      { ScopeType.Interface, new [] { AccessModifier.Private, AccessModifier.Public, AccessModifier.None }},
-      { ScopeType.Enum, new [] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
-      { ScopeType.For, new [] {AccessModifier.NotValid}},
-      { ScopeType.If, new [] {AccessModifier.NotValid}},
-      { ScopeType.Method, new [] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
-      { ScopeType.While, new [] {AccessModifier.NotValid}}
-    };
-
-    // This defines our rules for having access modifiers on members
-    public static readonly Dictionary<MemberType, AccessModifier[]> MemberRuleTree = new Dictionary<MemberType, AccessModifier[]>
-    {
-      {MemberType.InterfaceMember, new [] {AccessModifier.NotValid}},
-      {MemberType.Method, new [] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
-      {MemberType.MethodVariable, new [] {AccessModifier.NotValid}}
-    };
-  }
+        // This defines our rules for having access modifers on scope creating tokens
+        public static readonly Dictionary<Keywords, AccessModifier[]> Rules =
+            new Dictionary<Keywords, AccessModifier[]>
+            {
+                {Keywords.Namespace, new[] {AccessModifier.NotValid}},
+                {Keywords.Class, new[] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
+                {Keywords.Interface, new[] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
+                {Keywords.Enum, new[] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
+                {Keywords.ClassVariable, new[] {AccessModifier.Public, AccessModifier.Private, AccessModifier.None}},
+                {Keywords.Method, new[] {AccessModifier.Private, AccessModifier.Public, AccessModifier.None}},
+                {Keywords.For, new[] {AccessModifier.NotValid}},
+                {Keywords.If, new[] {AccessModifier.NotValid}},
+                {Keywords.While, new[] {AccessModifier.NotValid}},
+                {Keywords.InterfaceMember, new[] {AccessModifier.NotValid}},
+                {Keywords.MethodVariable, new[] {AccessModifier.NotValid}},
+                {Keywords.Public, new[] {AccessModifier.NotValid}},
+                {Keywords.Private, new[] {AccessModifier.NotValid}}
+                
+            };
+    }
 }

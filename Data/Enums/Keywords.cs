@@ -1,5 +1,6 @@
-namespace Digman.IO.CFlat.Data
+namespace Digman.IO.CFlat.Data.Enums
 {
+  //This is a list of all keywords and statuses. Other files need to match the int value of these key words so we can do conversions later.
   public enum Keywords
   {
     Namespace = 10,
@@ -15,5 +16,7 @@ namespace Digman.IO.CFlat.Data
     ClassVariable = 110,
     MethodVariable = 120,
     InterfaceMember = 130,
+    None = 140,
+    NotValid = 150
   }
 }

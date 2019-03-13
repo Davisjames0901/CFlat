@@ -1,4 +1,5 @@
 using Digman.IO.CFlat.Data;
+using Digman.IO.CFlat.Data.Enums;
 
 namespace Digman.IO.CFlat.SyntaxAnalyzers
 {
