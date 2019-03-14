@@ -7,7 +7,7 @@ namespace Digman.IO.CFlat
     {
         public static void Main(string[] args)
         {
-            KeywordTest.TestKeywordContents();
+            
         }
     }
 }

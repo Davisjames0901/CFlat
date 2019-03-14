@@ -7,14 +7,14 @@ namespace Digman.IO.CFlat.Rules
     public static class ScopeRules
     {
         //Defines rules for what scopes a keyword can contain
-        public static readonly Dictionary<Keywords, ScopeType[]> Rules = new Dictionary<Keywords, ScopeType[]>
+        public static readonly Dictionary<Keyword, Keyword[]> Rules = new Dictionary<Keyword, Keyword[]>
         {
-            {Keywords.Namespace, new[] {ScopeType.Class, ScopeType.Interface, ScopeType.Enum}},
-            {Keywords.Class, new[] {ScopeType.Method}},
-            {Keywords.Method, new[] {ScopeType.If, ScopeType.While, ScopeType.For}},
-            {Keywords.If, new[] {ScopeType.If, ScopeType.For, ScopeType.While}},
-            {Keywords.While, new[] {ScopeType.If, ScopeType.While, ScopeType.For}},
-            {Keywords.For, new[] {ScopeType.If, ScopeType.While, ScopeType.For}}
+            {Keyword.Namespace, new[] {Keyword.Class, Keyword.Interface, Keyword.Enum}},
+            {Keyword.Class, new[] {Keyword.Method}},
+            {Keyword.Method, new[] {Keyword.If, Keyword.While, Keyword.For}},
+            {Keyword.If, new[] {Keyword.If, Keyword.For, Keyword.While}},
+            {Keyword.While, new[] {Keyword.If, Keyword.While, Keyword.For}},
+            {Keyword.For, new[] {Keyword.If, Keyword.While, Keyword.For}}
         };
     }
 }

@@ -7,7 +7,7 @@ namespace Digman.IO.CFlat.Types
   {
     string Name { get; set; }
     TypeReference ReturnType { get; set; }
-    MemberType MemberType { get; set; }
-    AccessModifier AccessModifer { get; set; }
+    Keyword MemberType { get; set; }
+    Keyword AccessModifer { get; set; }
   }
 }
